@@ -21,13 +21,6 @@
 | :---: | :---: |
 | ![Web Canvas Dashboard Demo](docs/media/web_dashboard_demo.gif) <br><sub>*Проекция спайков коннектома в реальном времени*</sub> | ![Telegram Bot Interaction Demo](docs/media/telegram_bot_demo.gif) <br><sub>*Отправка фото боту и моторная реакция дрозофилы*</sub> |
 
-<!-- Дополнительное место под полноэкранную гифку -->
-<!--
-<div align="center">
-  <img src="docs/media/full_simulation_flow.gif" alt="Full Simulation Flow" width="90%">
-</div>
--->
-
 ---
 
 ## 💡 О проекте
@@ -95,8 +88,8 @@
 ### 1. Клонирование репозитория
 
 ```bash
-git clone https://github.com/your-username/flywire-connectome-critic.git
-cd flywire-connectome-critic
+git clone https://github.com/Kidpun/drozophoto.git
+cd drozophoto
 ```
 
 ### 2. Создание виртуального окружения
