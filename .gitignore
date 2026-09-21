@@ -1,0 +1,31 @@
+# Environment variables & secrets
+.env
+
+# Connectome datasets (large binary files >100MB cannot be pushed to GitHub)
+*.feather
+proofread_connections_783.feather
+annotations.tsv
+
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+.ruff_cache/
+.pytest_cache/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Raw video files
+*.mov
+*.mp4
+
