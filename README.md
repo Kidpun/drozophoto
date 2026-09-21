@@ -17,11 +17,9 @@
 
 ## 🎬 Демонстрация работы
 
-> *Сюда вставляются демонстрационные гифки интерфейса и Telegram-бота.*
-
 | Веб-интерфейс (Проекция коннектома 60 FPS) | Отклик мухи и Telegram-бот |
 | :---: | :---: |
-| ![Web Canvas Dashboard Demo](docs/media/web_dashboard_demo.gif) <br><sub>*placeholder: проекция спайков коннектома в реальном времени*</sub> | ![Telegram Bot Interaction Demo](docs/media/telegram_bot_demo.gif) <br><sub>*placeholder: отправка фото боту и моторная реакция дрозофилы*</sub> |
+| ![Web Canvas Dashboard Demo](docs/media/web_dashboard_demo.gif) <br><sub>*Проекция спайков коннектома в реальном времени*</sub> | ![Telegram Bot Interaction Demo](docs/media/telegram_bot_demo.gif) <br><sub>*Отправка фото боту и моторная реакция дрозофилы*</sub> |
 
 <!-- Дополнительное место под полноэкранную гифку -->
 <!--
