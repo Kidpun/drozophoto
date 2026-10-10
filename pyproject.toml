@@ -1,0 +1,26 @@
+[project]
+name = "drozophoto"
+version = "0.1.0"
+description = "Real-time Drosophila melanogaster whole-brain connectome simulation"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.110.0",
+    "uvicorn>=0.28.0",
+    "aiogram>=3.4.0",
+    "aiohttp>=3.9.0",
+    "polars>=1.0.0",
+    "pyarrow>=15.0.0",
+    "numpy>=1.26.0",
+    "scipy>=1.12.0",
+    "pillow>=10.0.0",
+    "python-dotenv>=1.0.0"
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W"]
+ignore = ["E501"]
