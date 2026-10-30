@@ -57,7 +57,7 @@ class SpikeSnapshot:
         total_steps: int | None = None,
         threshold: float = 0.04,
         max_nodes: int = DEFAULT_MAX_NODES,
-    ) -> "SpikeSnapshot":
+    ) -> SpikeSnapshot:
         """Build a frame without sorting all ``n_nodes`` activities.
 
         ``argpartition`` is O(n) and only the selected values are converted to

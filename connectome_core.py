@@ -13,14 +13,14 @@ import gc
 import inspect
 import io
 import math
+from collections.abc import Callable
 from dataclasses import dataclass
-from typing import Any, Callable, Optional
+from typing import Any
 
 import numpy as np
 import pyarrow.ipc as pa_ipc
 from scipy.ndimage import gaussian_filter
 from scipy.sparse import csr_matrix
-
 
 Array = np.ndarray
 StepCallback = Callable[[dict[str, Any]], Any]
@@ -447,7 +447,7 @@ class ConnectomeSimulator:
     def __init__(
         self,
         graph: ConnectomeGraph,
-        retina: Optional[RetinaEncoder] = None,
+        retina: RetinaEncoder | None = None,
         dt: float = 1.0,
         max_snapshot_nodes: int = 400,
     ) -> None:
@@ -488,7 +488,7 @@ class ConnectomeSimulator:
     async def evaluate_image(
         self,
         image: Any,
-        step_callback: Optional[StepCallback] = None,
+        step_callback: StepCallback | None = None,
         steps: int = 30,
     ) -> dict[str, Any]:
         if not 1 <= int(steps) <= 1000:

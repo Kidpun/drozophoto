@@ -29,3 +29,13 @@ Thumbs.db
 *.mov
 *.mp4
 
+
+# Local agent / IDE tooling
+.claude/
+CLAUDE.md
+AGENTS.md
+GEMINI.md
+.cursor/
+.cursorrules
+.windsurf/
+.aider*

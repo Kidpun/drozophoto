@@ -7,22 +7,23 @@ import json
 import logging
 import math
 import os
+from collections.abc import Awaitable, Callable
 from contextlib import asynccontextmanager
 from dataclasses import dataclass
-from typing import Any, Awaitable, Callable
+from typing import Any
 
 import numpy as np
-import pyarrow.ipc as pa_ipc
 import polars as pl
-from aiohttp.resolver import ThreadedResolver
+import pyarrow.ipc as pa_ipc
+import uvicorn
 from aiogram import Bot, Dispatcher, F
 from aiogram.client.session.aiohttp import AiohttpSession
 from aiogram.types import Message
+from aiohttp.resolver import ThreadedResolver
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.responses import HTMLResponse
 from scipy.ndimage import gaussian_filter
 from scipy.sparse import csr_matrix
-import uvicorn
 
 try:
     from dotenv import load_dotenv
@@ -192,7 +193,7 @@ def load_graph(path: str) -> Graph:
 
     def text_column(name: str) -> np.ndarray:
         return np.asarray(
-            ann.get_column(name).fill_null("").str.strip_chars().to_numpy(), dtype=str,
+            ann.get_column(name).fill_null("").str.strip_chars().to_numpy(), dtype=str,  # noqa: F821 (замыкание; ann удаляется только после всех вызовов)
         )
 
     superclass = text_column("super_class")
@@ -237,7 +238,7 @@ def load_graph(path: str) -> Graph:
 
     def node_mask(annotation_mask: np.ndarray) -> np.ndarray:
         mask = np.zeros(node_ids.size, dtype=bool)
-        mask[dst] = annotation_mask[matched]
+        mask[dst] = annotation_mask[matched]  # noqa: F821 (замыкание; dst/matched удаляются только после всех вызовов)
         return mask
 
     optic = node_mask(
@@ -524,6 +525,7 @@ class RetinaEncoder:
 
     def encode(self, image: Any, *, previous_image: Any = None, frame_interval_ms: float = 33.0) -> Retina:
         import hashlib
+
         from scipy.ndimage import map_coordinates
 
         image, rgb = self._image(image)
